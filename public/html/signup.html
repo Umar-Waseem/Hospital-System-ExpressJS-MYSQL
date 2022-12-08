@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/signup.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Signup</title>
+</head>
+
+<body>
+    <section class="text-gray-600 body-font">
+        <form action="/signup" method="post">
+            <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
+                <div class="sm:w-1/2 mb-10 px-4">
+                    <h2 class="title-font text-5xl font-medium text-gray-900 mt-6 mb-9">The Fast Hospital</h2>
+                    <p class="leading-relaxed text-base text-gray-900">Time and health are two precious assets that we
+                        don't recognize
+                        and appreciate until they have been depleted</p>
+                </div>
+                <div class="lg:w-2/5 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+                    <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Signup for a new account</h2>
+                    <div class="relative mb-4">
+                        <label for="full-name" class="leading-7 text-sm text-gray-600">Enter A Username</label>
+                        <input type="text" id="signupUsername" name="signupUsername" placeholder="username"
+                            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                    </div>
+                    <div class="relative mb-4">
+                        <label for="email" class="leading-7 text-sm text-gray-600">Enter A Password</label>
+                        <input type="password" id="signupPassword" name="signupPassword" placeholder="password"
+                            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                    </div>
+                    <div class="relative mb-4">
+                        <label for="email" class="leading-7 text-sm text-gray-600">Confirm Your Password</label>
+                        <input type="password" id="signupConfirmPassword" name="signupConfirmPassword" placeholder="confirm password"
+                            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                    </div>
+                    <!-- add tailwind css dropdown -->
+                    <div class="relative mb-4">
+                        <label for="email" class="leading-7 text-sm text-gray-600">Select Role</label>
+                        <select name="signupRole" id="signupRoleDropdown"
+                            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                            <!-- <option value="admin">Admin</option>
+                                <option value="doctor">Doctor</option>
+                                <option value="patient">Patient</option> -->
+                        </select>
+                    </div>
+
+                    <button id="signupButton"
+                        class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Create
+                        A New Account</button>
+                    <p class="text-xs text-gray-500 mt-3">Already have an account?<a href="login">Signup</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <script src="../js/signup.js"></script>
+</body>
+
+</html>
