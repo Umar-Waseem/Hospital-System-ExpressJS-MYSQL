@@ -26,7 +26,7 @@ body {
 
     /* make it look decent enough */
     background: #232323;
-    color: #cdcdcd;
+    /* color: #cdcdcd; */
     font-family: "Avenir Next", "Avenir", sans-serif;
     background: linear-gradient(-45deg, #3D7EAA, #FFE47A);
 }
@@ -46,12 +46,12 @@ body {
 #menuToggle a {
     text-decoration: none;
     color: #232323;
-
-    transition: color 0.3s ease;
+    
+    transition: color 0.3s ease-in-out;
 }
 
 #menuToggle a:hover {
-    color: tomato;
+    color: white;
 }
 
 
@@ -60,8 +60,6 @@ body {
     width: 40px;
     height: 32px;
     position: absolute;
-    top: -7px;
-    left: -5px;
 
     cursor: pointer;
 
@@ -137,7 +135,7 @@ body {
     height: 100vh;
     width: 300px;
     margin: -100px 0 0 -50px;
-    padding: 50px;
+    padding: 20px;
     padding-top: 125px;
 
     background: #ededed;
@@ -152,8 +150,12 @@ body {
 }
 
 #menu li {
-    padding: 10px 0;
+    padding: 10px 10px;
     font-size: 22px;
+}
+
+#menu li:hover {
+    background-color: #FFE47A;
 }
 
 /*
