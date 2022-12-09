@@ -4,7 +4,7 @@ var con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "password",
-    // database: "assig3"
+    database: "project"
 });
 
 module.exports = con;

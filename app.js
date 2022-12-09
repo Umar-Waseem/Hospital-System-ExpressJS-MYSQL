@@ -13,6 +13,17 @@ const homeRoutes = require("./routes/home_routes.js")
 
 // middleware
 
+const bodyParser = require('body-parser');
+
+
+app.use(express.static(__dirname + '/'));
+app.use(bodyParser.urlencoded({ extend: true }));
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
+app.set('public', __dirname);
+
+
+
 app.use(express.static(__dirname + '/public'));
 
 app.use('/ward', wardRoutes);
