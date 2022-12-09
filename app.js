@@ -1,6 +1,8 @@
-var con = require("./database_handler.js");
+var con = require("./handlers/database_handler.js");
+
 const express = require('express');
 const app = express();
+
 const bodyParser = require('body-parser');
 const encoder = bodyParser.urlencoded();
 
@@ -56,28 +58,24 @@ app.post('/signup', encoder, (request, res) => {
 
     try {
         console.log("Post request on signup")
-        console.log(request.body)
+        // console.log(request.body)
 
         var username = request.body.signupUsername;
         var password = request.body.signupPassword;
         var confirmPassword = request.body.signupConfirmPassword;
-        // var signupDropDownValue = document.getElementById('signupRoleDropdown').value;
-
-        // get drop down value selected
-
+        var signupDropDownValue = request.body.signupRole;
 
         console.log(username)
         console.log(password)
         console.log(confirmPassword)
-    // console.log(signupDropDownValue)
+        console.log(signupDropDownValue)
     } catch (e) {
         res.send({
+            "error" : e.name,
             "errorMessage" : e.message,
             "requestFrom": request.url
         })
     }
-
-
     
 })
 

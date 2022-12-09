@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Ward Record</title>
+
+    <style>
+        body {
+            padding: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="grid grid-cols-2">
+        <div class="flex p-8 text-2xl">
+            <div class="mb-3 xl:w-96">
+                <label for="exampleFormControlInput1" class="form-label inline-block mb-2 text-gray-700">Ward Name:
+                </label>
+                <input type="text"
+                    class="form-control block w-full px-3 py-2.5 text-base font-normal text-gray-900 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="wardNameInputField" placeholder="Enter Patient Number" />
+            </div>
+        </div>
+        <div class="docNo flex p-8 text-2xl">
+            <p id="specialty">Specialty: </p>
+        </div>
+        <div class="flex p-8 text-2xl">
+            <p id="daySister">Day Sister</p>
+        </div>
+        <div class="flex p-8 text-2xl">
+            <p id="nightsister">Night Sister:</p>
+        </div>
+        <div class="flex p-8 text-2xl">
+            <p id="staffNurses">Staff Nurses</p>
+        </div>
+        <div class="flex p-8 text-2xl">
+            <p id="nonRegNurses">Non Registered Nurses: </p>
+        </div>
+    </div>
+
+
+
+
+    <div class="medHistory flex text-4xl justify-center mb-10">
+        <h1>Ward Record</h1>
+    </div>
+
+
+    <div class="flex flex-col">
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                    <table class="min-w-full text-center">
+                        <thead class="border-b bg-gray-800">
+                            <tr>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Patient Number
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Patient Name
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Care Unit
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Bed Number
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Consultant
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Date Admitted
+                                </th>
+                            </tr>
+                        </thead class="border-b">
+                        <tbody>
+                            <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-300">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    Mark
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    Otto
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    @mdo
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    @mdo
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    @mdo
+                                </td>
+                            </tr class="bg-white border-b">
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
