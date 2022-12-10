@@ -51,43 +51,54 @@
 
     <div class="grid grid-cols-2 ml-40">
         <div class="flex p-8 text-2xl">
-                <div class="mb-3 xl:w-96">
-                    <label for="exampleFormControlInput1" class="form-label inline-block mb-2 text-gray-700">Patient No:
-                    </label>
-                    <input type="text" name="patientNoInputFieldValue"
-                        class="form-control block w-full px-3 py-2.5 text-base font-normal text-gray-900 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                        id="patientNoInputField" placeholder="Enter Patient Number" />
-                    <!-- search button -->
-                    <button id="patientSearchButton"
-                        class="mt-2 inline-block px-4 py-2.5 text-base font-medium leading-6 text-center text-white uppercase transition bg-blue-600 rounded shadow ripple hover:shadow-lg hover:bg-blue-700 focus:outline-none">
-                        Search
-                    </button>
-                </div>
+            <div class="mb-3 xl:w-96">
+                <label for="exampleFormControlInput1" class="form-label inline-block mb-2 text-gray-700">Patient No:
+                </label>
+                <input type="text" name="patientNoInputFieldValue"
+                    class="form-control block w-full px-3 py-2.5 text-base font-normal text-gray-900 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="patientNoInputField" placeholder="Enter Patient Number" />
+                <!-- search button -->
+                <button id="patientSearchButton"
+                    class="mt-2 inline-block px-4 py-2.5 text-base font-medium leading-6 text-center text-white uppercase transition bg-blue-600 rounded shadow ripple hover:shadow-lg hover:bg-blue-700 focus:outline-none">
+                    Search
+                </button>
+            </div>
         </div>
         <div class="docNo flex p-8 text-2xl">
-            <p id="patNo">Doctor No: <%= data[0].DoctorNo %>
-            </p>
+            <% if (data && data[0]) { %>
+                <p id="patNo">Doctor No: <%= data[0].DoctorNo %>
+                </p>
+                <% } %>
         </div>
         <div>
         </div>
         <div class="flex p-8 text-2xl">
-            <p id="docName">Doctor Name: <%= data[0].DoctorName %>
-            </p>
+            <% if (data && data[0]) { %>
+                <p id="docName">Doctor Name: <%= data[0].DoctorName %>
+                </p>
+                <% } %>
         </div>
         <div>
         </div>
         <div class="flex p-8 text-2xl">
-            <p id="consultant">Consultant: <%= data[0].ConsultantName %>
-            </p>
+            <% if (data && data[0]) { %>
+                <p id="consultant">Consultant: <%= data[0].ConsultantName %>
+                </p>
+                <% } %>
         </div>
         <div class="flex p-8 text-2xl">
-            <p id="patName">Patient Name: <%= data[0].PatientName %>
-            </p>
+            <% if (data && data[0]) { %>
+                <p id="patName">Patient Name: <%= data[0].PatientName %>
+                </p>
+                <% } %>
         </div>
         <div class="flex p-8 text-2xl">
-            <p id="dob">Date Of Birth: <%= data[0].empDOB %>
-            </p>
+            <% if (data && data[0]) { %>
+                <p id="dob">Date Of Birth: <%= data[0].empDOB %>
+                </p>
+                <% } %>
         </div>
+
     </div>
 
 
@@ -122,25 +133,28 @@
                                 </th>
                             </tr>
                         </thead class="border-b">
-                        <% data.forEach(function(item) { %>
-                            <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-300">
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                    <%= item.ComplaintNo %>
-                                </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    <%= item.TreatmentNo %>
-                                </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    <%= item.DoctorName %>
-                                </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    <%= item.DateTreatmentStarted %>
-                                </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    <%= item.DateTreatmentEnded %>
-                                </td>
-                            </tr>
-                            <% }); %>
+                        <% if (data) { %>
+                            <% data.forEach(function(item) { %>
+                                <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-300">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                        <%= item.ComplaintNo %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.TreatmentNo %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.DoctorName %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.DateTreatmentStarted %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.DateTreatmentEnded %>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                                    <% } %>
+
 
                     </table>
                 </div>

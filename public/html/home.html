@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/ham.css">
+        <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
 <body>
@@ -32,7 +33,37 @@
             </ul>
         </div>
     </nav>
+
+    <!-- display time in big font in center of page -->
     
-    <!-- <script src="../js/script.js"></script> -->
+    <div class="text-4xl flex justify-center" id="time"></div>
+
+    
+    
+    <script >
+        function displayTime() {
+            var time = new Date();
+            var hours = time.getHours();
+            var minutes = time.getMinutes();
+            var seconds = time.getSeconds();
+            var date = time.toDateString();
+    
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+    
+            var clock = document.getElementById('time');
+            clock.innerText = hours + ":" + minutes + ":" + seconds;
+        }
+    
+        displayTime();
+        setInterval(displayTime, 1000);
+    </script>
 </body>
 </html>

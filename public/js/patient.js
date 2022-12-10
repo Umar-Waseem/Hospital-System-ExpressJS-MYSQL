@@ -9,13 +9,11 @@ document.getElementById('patientSearchButton').addEventListener('click', async (
     console.log(patientNo);
 
     // // send get request to /patient/:patientNo
-    // await fetch('/patient/' + patientNo)
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         console.log(data);
-    //         // render patient.ejs with data
-    //         document.getElementById('patient').innerHTML = data;
-    //     })
+    fetch('/patient/' + patientNo)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
     
 
 })
