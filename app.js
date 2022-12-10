@@ -10,6 +10,7 @@ const patientRoutes = require("./routes/patient_routes.js");
 const loginRoutes = require("./routes/login_routes.js");
 const signUpRoutes = require("./routes/signup_routes.js");
 const homeRoutes = require("./routes/home_routes.js")
+const staffRoutes = require("./routes/staff_routes.js")
 
 // middleware
 
@@ -31,6 +32,7 @@ app.use('/patient', patientRoutes);
 app.use('/', loginRoutes);
 app.use('/signup', signUpRoutes);
 app.use('/home', homeRoutes);
+app.use('/staff', staffRoutes);
 
 // start server
 const PORT = 80
