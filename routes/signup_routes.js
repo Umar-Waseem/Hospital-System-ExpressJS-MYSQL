@@ -18,12 +18,26 @@ router.post('/', encoder, (request, res) => {
         var username = request.body.signupUsername;
         var password = request.body.signupPassword;
         var confirmPassword = request.body.signupConfirmPassword;
-        var signupDropDownValue = request.body.signupRole;
 
         console.log(username)
         console.log(password)
         console.log(confirmPassword)
-        console.log(signupDropDownValue)
+            
+
+        if (password == confirmPassword) {
+            con.query("INSERT INTO project.admin (name, pass) VALUES (?, ?)", [username, password], (err, result, fields) => {
+                if (err) {
+                    res.redirect('/signup');
+                }
+                else {
+                    res.redirect('/home');
+                }
+            })
+        }
+        else{
+            res.redirect('/signup');
+        }
+
     } catch (e) {
         res.send({
             "error": e.name,

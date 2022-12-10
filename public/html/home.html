@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/ham.css">
         <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <body>
     <nav role="navigation">
@@ -36,33 +36,25 @@
 
     <!-- display time in big font in center of page -->
     
-    <div class="text-4xl flex justify-center" id="time"></div>
+    <div class="text-4xl ml-40 mt-5" id="time"></div>
 
     
     
     <script >
+        // display time with am pm and seconds
         function displayTime() {
             var time = new Date();
             var hours = time.getHours();
             var minutes = time.getMinutes();
             var seconds = time.getSeconds();
-            var date = time.toDateString();
-    
-            if (hours < 10) {
-                hours = "0" + hours;
-            }
-            if (minutes < 10) {
-                minutes = "0" + minutes;
-            }
-            if (seconds < 10) {
-                seconds = "0" + seconds;
-            }
-    
-            var clock = document.getElementById('time');
-            clock.innerText = hours + ":" + minutes + ":" + seconds;
+            var ampm = hours >= 12 ? 'pm' : 'am';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0'+minutes : minutes;
+            seconds = seconds < 10 ? '0'+seconds : seconds;
+            var strTime = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+            document.getElementById("time").innerHTML = strTime;
         }
-    
-        displayTime();
         setInterval(displayTime, 1000);
     </script>
 </body>

@@ -1,15 +1,15 @@
 
 // filling the drop down on login screen
 
-loginScreenRoleDropdown = document.getElementById('roleDropdown');
+// loginScreenRoleDropdown = document.getElementById('roleDropdown');
 
-roles = [ "Doctor", "Patient"];
+// roles = [ "Doctor", "Patient"];
 
-for (var i = 0; i < roles.length; i++) {
-    var option = document.createElement('option');
-    option.text = roles[i];
-    loginScreenRoleDropdown.add(option);
-}
+// for (var i = 0; i < roles.length; i++) {
+//     var option = document.createElement('option');
+//     option.text = roles[i];
+//     loginScreenRoleDropdown.add(option);
+// }
 
 
 function toggleButton() {

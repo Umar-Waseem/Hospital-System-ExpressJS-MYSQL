@@ -24,7 +24,7 @@ router.post('/', encoder,  (request, res) => {
 
     // table is loginRole variable
 
-    con.query("SELECT * FROM project." + loginRole + " where patName = ? and pass = ? ", [username, password], (err, result, fields) => {
+    con.query("SELECT * FROM project.admin where name = ? and pass = ? ", [username, password], (err, result, fields) => {
         if (result.length > 0) {
             res.redirect('/home');
         }

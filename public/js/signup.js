@@ -1,13 +1,13 @@
-signupRoleDropdown = document.getElementById('signupRoleDropdown');
+// signupRoleDropdown = document.getElementById('signupRoleDropdown');
 
 
-roles = ["Doctor", "Patient"];
+// roles = ["Doctor", "Patient"];
 
-for (var i = 0; i < roles.length; i++) {
-    var option2 = document.createElement('option');
-    option2.text = roles[i];
-    signupRoleDropdown.add(option2);
-}
+// for (var i = 0; i < roles.length; i++) {
+//     var option2 = document.createElement('option');
+//     option2.text = roles[i];
+//     signupRoleDropdown.add(option2);
+// }
 
 function toggleButton() {
     signupUserNameValue = document.getElementById('signupUsername').value;
