@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/ham.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Home</title>
+</head>
+
+<body>
+    <nav role="navigation">
+        <div id="menuToggle">
+            <input type="checkbox" />
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <ul id="menu">
+                <a href="home">
+                    <li>Home</li>
+                </a>
+                <a href="ward">
+                    <li>Wards</li>
+                </a>
+                <a href="patient">
+                    <li>Medical Histories</li>
+                </a>
+                <a href="staff">
+                    <li>Staff Information</li>
+                </a>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- display time in big font in center of page -->
+
+    <div class="text-4xl ml-40 mt-5" id="time"></div>
+
+    <div class="text-4xl ml-40 mt-5">Welcome To <p class="text-red-700 inline-block">Ivor Paine Hospital</p>
+    </div>
+
+    <p class="text-2xl ml-40 mt-20">Patients: </p>
+
+
+
+    <div class="flex flex-col ml-40 mr-40">
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                    <table class="min-w-full text-center">
+                        <thead class="border-b bg-gray-800">
+                            <tr>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    ID
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Name
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    CNIC
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Phone NO
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Address
+                                </th>
+                            </tr>
+                        </thead class="border-b">
+                        <% if (patientData) { %>
+                            <% patientData.forEach(function(item) { %>
+                                <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-300">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                        <%= item.id %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.name %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.cnic %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.phoneNo %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.address %>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                                    <% } %>
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="text-2xl ml-40 mt-20">Employees: </p>
+
+    <div class="flex flex-col ml-40 mr-40">
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                    <table class="min-w-full text-center">
+                        <thead class="border-b bg-gray-800">
+                            <tr>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    ID
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Name
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    CNIC
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Phone NO
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Address
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Gender
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    DOB
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Experience
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Shift Start
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Shift End
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Role
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Salary
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Rating
+                                </th>
+                            </tr>
+                        </thead class="border-b">
+                        <% if (employeeData) { %>
+                            <% employeeData.forEach(function(item) { %>
+                                <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-300">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                        <%= item.id %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.name %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.cnic %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.phone %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.address %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.gender %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.dob %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.experience %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.shiftstart %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.shiftend %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.role %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.salary %>
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <%= item.rating %>
+                                    </td>
+                                </tr>
+                            <% }); %>
+                        <% } %>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        // display time with am pm and seconds
+        function displayTime() {
+            var time = new Date();
+            var hours = time.getHours();
+            var minutes = time.getMinutes();
+            var seconds = time.getSeconds();
+            var ampm = hours >= 12 ? 'pm' : 'am';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            var strTime = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+            document.getElementById("time").innerHTML = strTime;
+        }
+        setInterval(displayTime, 1000);
+    </script>
+</body>
+
+</html>
